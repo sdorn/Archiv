@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="templates/template.xhtml">
+
+    <ui:define name="metadata">
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data" >
+            <p:panel header="Properties">
+                <p:dataTable value="#{showProperties.properties}" var="properties" id="list">
+                    <p:column headerText="Key">
+                        <h:outputText value="#{properties.key}" />
+                    </p:column>
+                    <p:column headerText="Value">
+                        <h:outputText value="#{properties.value}" />
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

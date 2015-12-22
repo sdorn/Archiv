@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="templates/template.xhtml">
+
+    <ui:define name="metadata">
+    </ui:define>
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data" >
+            <!--<p:growl id="messages" showDetail="true" />-->
+            <p:panel header="Upload">
+                <h:panelGrid columns="3" cellpadding="10">
+                    <p:fileUpload value="#{fileUpload.uploadedFile}" mode="simple" fileUploadListener="#{fileUpload.upload}"/>
+                    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUpload.load}" />
+                    <p:commandButton value="Weiter" ajax="false" action="faces/showProperties" />
+                    
+                </h:panelGrid>
+<!--
+               <p:dataTable value="#{fileUpload.names}" var="names" id="list">
+                    <p:column headerText="Key">
+                        <h:outputText value="#{names.key}" />
+                    </p:column>
+                    <p:column headerText="Value">
+                        <h:outputText value="#{names.value}" />
+                    </p:column>
+                </p:dataTable>
+                <h:outputText id="tikaout" value="#{fileUpload.tikaout}"/>  
+                <ui:insert  parent="#{fileUpload.tikaout}"/>-->
+            </p:panel>
+        </h:form>
+        
+<!--        <ui:insert  parent="#{fileUpload.tikaout}"/>-->
+    </ui:define>
+</ui:composition> 
